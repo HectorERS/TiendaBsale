@@ -16,6 +16,7 @@ router.get('/productos/:id', async(req, res) => {
    res.json(productos)
 })
 
+//filtra los productos por categoria
 router.get('/productos/categoria/:categoria', async(req, res) => {
     const { categoria } = req.params;
     const category = await pool.query('SELECT product.name, product.price, product.url_image, product.discount, category.name as category_name FROM product, category where category.id = product.category and category.name = ?', [categoria]);
