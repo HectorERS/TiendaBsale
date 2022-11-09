@@ -28,7 +28,7 @@ app.use(express.urlencoded({extended: false}));// aceptar los datos que se envie
 app.use(express.json());
 
 //Routes
-
+app.use(require('./routes/Productos'))
 
 
 
